@@ -1,12 +1,19 @@
 const select_mode = document.querySelector('input[name="select-mode"]:checked');
-var output = "";
-var inputFileName = "";
-function generateCopyCommand {
+
+function nevigate2SelectedMode() {
+    if (select_mode) {
+        window.location.href = select_mode.value;
+    }
+    
+}
+
+
+let output = "";
+let inputFileName = "";
+const outputBox = document.getElementById('output-box');
+function generateCopyCommand() {
     // ffmpeg -i input.mkv -c copy output.mp4
     output = "ffmpeg -i " + inputFileName + " -c copy output.mp4";
-
-    const randomIndex = Math.floor(Math.random() * exampleTexts.length);
-    const outputBox = document.getElementById('output-box');
     outputBox.textContent = output;
 }
 
@@ -27,4 +34,8 @@ function copyText() {
     }
 
     document.body.removeChild(tempInput);
+}
+
+function generateCommand() {
+    generateCopyCommand();
 }
