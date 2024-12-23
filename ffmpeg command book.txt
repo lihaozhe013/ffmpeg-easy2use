@@ -186,3 +186,32 @@ Get-ChildItem $inputDir -Filter *.mp4 | ForEach-Object {
   ```
 
 如果需要更详细的示例，或者对批量脚本感兴趣，请告诉我。
+
+
+
+以下是使用 FFmpeg 将视频转码为 H.264 编码、封装为 MP4 格式的参考指令，并且选择较高的转换质量：
+
+```bash
+ffmpeg -i input_video.mkv -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -movflags +faststart output_video.mp4
+```
+
+### 参数说明：
+- **`-i input_video.mkv`**: 输入文件路径，可以是任何支持的格式。
+- **`-c:v libx264`**: 指定使用 H.264 编码器。
+- **`-preset slow`**: 指定编码速度，`slow` 表示更高质量但速度稍慢。可以根据需求选择：`ultrafast`（最快但质量较低），`fast`，`medium`，`slow`，`veryslow`（最高质量但最慢）。
+- **`-crf 18`**: CRF（Constant Rate Factor，恒定码率因子）控制质量，范围是 0-51，值越小质量越高，18-23 是常用范围。18 通常被认为接近无损。
+- **`-c:a aac`**: 指定音频编码器为 AAC。
+- **`-b:a 192k`**: 设置音频比特率为 192 kbps。
+- **`-movflags +faststart`**: 优化 MP4 文件，使其支持流媒体播放（快速开始）。
+- **`output_video.mp4`**: 输出文件路径。
+
+### 示例：
+如果输入文件是 `input_video.mkv`，运行以下命令：
+```bash
+ffmpeg -i input_video.mkv -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -movflags +faststart output_video.mp4
+```
+
+### 提示：
+- 如果目标文件大小有限制，可以使用 `-b:v` 指定视频比特率，例如 `-b:v 3000k` 设置为 3000 kbps。
+- 如果不需要重新编码音频，可以加上 `-c:a copy`，直接拷贝音频流。
+- 如需进一步优化，可以尝试调整 `preset` 和 `crf` 值。
