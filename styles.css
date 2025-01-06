@@ -51,10 +51,6 @@ fieldset {
     margin: auto;
 }
 
-.tips {
-    font-size: 13px;
-}
-
 .tips-container {
     width: 63%;
     margin: auto;
@@ -65,7 +61,6 @@ fieldset {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
-    margin-top: 10px;
     font-size: 16px;
     color: #333;
     word-wrap: break-word;
@@ -77,6 +72,7 @@ fieldset {
 }
 
 .input-boxes {
-    width: 310px;
+    width: 50px;
+    height: 20px;
     margin: auto;
 }

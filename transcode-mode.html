@@ -21,7 +21,7 @@
         <label for="input-file-name">
             <h3>Enter your file name:</h3>
             <!-- <br><br> -->
-            <textarea id="input-file-name" name="input-file-name" rows="1" cols="20" placeholder="Example: input.mp4, input.mkv"></textarea>
+            <textarea style="resize: none; text-align: center;" id="input-file-name" name="input-file-name" rows="1" cols="20" placeholder="Example: input.mp4"></textarea>
         </label>
         <br><br>
         <fieldset>
@@ -35,20 +35,26 @@
         <br>
         <label for="quality" id="quality-label">
             Transcoding Quality:
-            <input class="input-boxes" min="0" max="51" id="quality" name="quality" type="number" placeholder="Enter a number from 0 to 51, 23 is recommanded" required />
+            <input class="input-boxes" min="0" max="51" id="quality" name="quality" type="number" value="23" required />
         </label>
-        <div class="tips-container">
-            <p class="tips">Tips: Enter the quality you want, max 51, min 0, smaller represent better quality and slower transcoding speed. 18 is a great number for the quality similar to the best quality.</p>
+
+        <div style="width: 66%; margin: auto;">
+            <p style="font-size: 13px; text-align: justify;">
+                Notes: Smaller value represent better quality and slower transcoding speed.
+                To get high video quality, 18-23 should be enough.
+
+            </p>
         </div>
+
         <br>
         <button id="go-back-1" onclick="goBack()">Back</button>
         <button id="startStopButton" onclick="generateCommand(1)">Generate Command</button>
-        <button id="resetButton">Reset</button>
+        <button id="resetButton" onclick="resetTranscodingMode()">Reset</button>
         <br>
         <div id="output-box" class="output-box"></div>
         <button class="button" onclick="copyText()">Copy Command</button>
-        <br>
     </div>
+    <br>
     <script src="get-command.js"></script>
 </body>
 </html>

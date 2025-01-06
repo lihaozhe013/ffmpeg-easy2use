@@ -2,10 +2,10 @@ let inputFileName = "";
 function nevigate2SelectedMode() {
     const select_mode = document.querySelector('input[name="select-mode"]:checked');
     if (select_mode) {
-        if (select_mode.id == "copy") {
+        if (select_mode.id === "copy") {
             window.location.href = "copy-mode.html";
         }
-        else if (select_mode.id == "transcode") {
+        else if (select_mode.id === "transcode") {
             window.location.href = "transcode-mode.html";
         }
     }
@@ -16,9 +16,16 @@ function goBack() {
     window.location.href = "index.html";
 }
 
+function resetTranscodingMode() {
+    window.location.href = "transcode-mode.html";
+}
+
+function resetCopyMode() {
+    window.location.href = "copy-mode.html";
+}
 
 function generateCopyCommand() {
-    let output = "";
+    let output;
     const outputBox = document.getElementById('output-box');
     const fileName = document.getElementById("input-file-name");
     const containerFormat = document.querySelector('input[name="select-container"]:checked');
@@ -33,13 +40,13 @@ function generateTranscodeCommand() {
     const codingFormat = document.querySelector('input[name="select-coding-format"]:checked');
     const containerFormat = document.querySelector('input[name="select-container"]:checked');
     const transcodingQuality = document.getElementById("quality");
-    if (codingFormat.id == "av1") {
+    if (codingFormat.id === "av1") {
         alert("the function is not finished yet, please try other format")
     }
-    else if (codingFormat.id == "hvac") {
+    else if (codingFormat.id === "hvac") {
         output = "ffmpeg -i " + fileName.value + " -c:v libx265 -crf " + transcodingQuality.value + " -preset slow -c:a aac -b:a 192k -movflags +faststart output." + containerFormat.value;
     }
-    else if (codingFormat.id == "avc") {
+    else if (codingFormat.id === "avc") {
         output = "ffmpeg -i " + fileName.value + " -c:v libx264 -crf " + transcodingQuality.value + " -preset slow -c:a aac -b:a 192k -movflags +faststart output." + containerFormat.value;
     }
     outputBox.textContent = output;
@@ -64,7 +71,7 @@ function copyText() {
 }
 
 function generateCommand(modeID) {
-    if (modeID == 0) {
+    if (modeID === 0) {
         generateCopyCommand();
     }
     else {
