@@ -38,32 +38,7 @@
             <input class="input-boxes" min="0" max="51" id="quality" name="quality" type="number" value="23" required />
         </label>
 
-        <div style="width: 66%; margin: auto;">
-            <p style="font-size: 13px; text-align: justify;">
-                Notes: Smaller value represent better quality and slower transcoding speed.
-                To get high video quality, 18-23 should be enough.
-            </p>
-        </div>
-        <fieldset>
-            <legend>Audio Quality: </legend>
-            <label for="128kbps"><input id="128kbps" type="radio" name="select-coding-format" class="radio-class" checked value="128"/>128 kbps</label>
-            <br>
-            <label for="192kbps"><input id="192kbps" type="radio" name="select-coding-format" class="radio-class" value="192"/>192 kbps</label>
-            <br>
-            <label for="320kbps"><input id="320kbps" type="radio" name="select-coding-format" class="radio-class" value="320"/>320 kbps</label>
-        </fieldset>
-        <fieldset>
-            <legend>Fast or Slow Mode </legend>
-            <label for="fast"><input id="fast" type="radio" name="fast-or-slow-mode" class="radio-class" checked value="fast"/>Fast</label>
-            <br>
-            <label for="slow"><input id="slow" type="radio" name="fast-or-slow-mode" class="radio-class" value="slow" checked/>Slow</label>
-        </fieldset>
-        <div style="width: 66%; margin: auto;">
-            <p style="font-size: 13px; text-align: justify;">
-                Notes: Slow one have better video quality and slower transcoding speed.
-            </p>
-        </div>
-
+        <br>
         <button id="go-back-1" onclick="goBackSimpleAdvancedPage()">Back</button>
         <button id="startStopButton" onclick="generateCommand(1)">Generate Command</button>
         <button id="resetButton" onclick="resetTranscodingMode()">Reset</button>
