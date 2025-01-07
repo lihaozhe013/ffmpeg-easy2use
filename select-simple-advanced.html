@@ -11,13 +11,14 @@
 <body>
     <div class="center-background">
         <h1>FFMpeg Command Generator</h1>
-        <h2>version 1.0.0</h2>
+        <h2>version 1.1.0</h2>
         <fieldset>
             <legend>Select mode: </legend>
             <label for="simple-mode"><input id="simple-mode" type="radio" name="select-simple-advanced" class="radio-class" checked/>Simple Mode</label>
             <br>
             <label for="advanced-mode"><input id="advanced-mode" type="radio" name="select-simple-advanced" class="radio-class"/>Advanced Mode</label>
         </fieldset>
+        <button id="back2index" onclick="back2index()">Back</button>
         <button id="go-2-mode" onclick="go2SelectedMode()">Next Step</button>
     </div>
     <script src="select-simple-advanced.js"></script>

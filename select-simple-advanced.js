@@ -10,3 +10,7 @@ function go2SelectedMode() {
     }
     else alert('Please select a option!!!');
 }
+
+function back2index() {
+    window.location.href = "index.html";
+}

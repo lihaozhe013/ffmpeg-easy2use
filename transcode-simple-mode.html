@@ -18,9 +18,8 @@
             <br>
             <label for="mkv"><input id="mkv" type="radio" name="select-container" class="radio-class" value="mkv"/>.mkv</label>
         </fieldset>
+        <h3>Enter your file name:</h3>
         <label for="input-file-name">
-            <h3>Enter your file name:</h3>
-            <!-- <br><br> -->
             <textarea style="resize: none; text-align: center;" id="input-file-name" name="input-file-name" rows="1" cols="20" placeholder="Example: input.mp4"></textarea>
         </label>
         <br><br>
@@ -41,7 +40,7 @@
         <br>
         <button id="go-back-1" onclick="goBackSimpleAdvancedPage()">Back</button>
         <button id="startStopButton" onclick="generateCommand(1)">Generate Command</button>
-        <button id="resetButton" onclick="resetTranscodingMode()">Reset</button>
+        <button id="resetButton" onclick="resetSimpleTranscodingMode()">Reset</button>
         <br>
         <div id="output-box" class="output-box"></div>
         <button class="button" onclick="copyText()">Copy Command</button>

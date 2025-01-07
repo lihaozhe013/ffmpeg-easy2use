@@ -9,6 +9,10 @@ function resetTranscodingMode() {
     window.location.href = "transcode-mode.html";
 }
 
+function resetSimpleTranscodingMode() {
+    window.location.href = "transcode-simple-mode.html";
+}
+
 function resetCopyMode() {
     window.location.href = "copy-mode.html";
 }
